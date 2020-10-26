@@ -1,0 +1,81 @@
+h1b_worker_fact
+
+FY_YEAR                 Calendar year           
+CASE_NUMBER             Unique identifier for each application     
+OES_STATE_DIM_ID        Surrogate Key of oes_by_state_dim
+EMPLOYER_DIM_ID         Surrogate Key of employer_dim
+CASE_STATUS             Status associated with case
+CASE_SUBMITTED          date application was submitted
+DECISION_DATE           significant event decision date
+VISA_CLASS              type of temporary application submitted for processing
+EMPLOYMENT_START_DATE   Begin date of employment
+EMPLOYMENT_END_DATE     End date of empoloyment
+EMPLOYER_NAME           Name of employer submitting application
+JOB_TITLE               Title of job
+SOC_CODE                occupational code from Standard Occupational Classification System
+SOC_NAME                occupational name from Standard Occupational Classification System
+NAICS_CD                Industry code from North American Indsutry Classification System
+NAICS_NAME              Industry code from North American Indsutry Classification System
+FULL_TIME_POSITION      Y= fulltime position N = Parttime position
+PREVAILING_WAGE         Prevailing wage of job being requested
+PW_UNIT_OF_PAY          Unit of Pay
+PW_WAGE_LEVEL           Level of wage - I, II, III, IV, NA
+WAGE_RATE_OF_PAY_FROM   Employer's proposed Wage rate
+WAGE_RATE_OF_PAY_TO     Maximum Proposed Wage rate
+WAGE_UNIT_OF_PAY        Unit of Pay
+WORKSITE_CITY           Workers City of employment
+WORKSITE_COUNTY         Workers County of employment
+WORKSITE_STATE          Workers State of employment
+WORKSITE_POSTAL_CODE    Workers Postal Code of employment
+ETL_LOAD_DT             System generated on Load
+ETL_UPDATE_DT           System generated on Load or Update
+
+
+employer_dimension
+
+EMPLOYER_DIM_ID             Primary Key generated
+PERIOD_YEAR_ID              Calenday Year
+EMPLOYER_NAME               Employer Name
+EMPLOYER_BUSINESS_DBA       Trade Name 
+EMPLOYER_ADDRESS            Employer Street Address 
+EMPLOYER_CITY               Employer Street Address   
+EMPLOYER_STATE              Employer State code 
+EMPLOYER_POSTAL_CODE        Employer postal code
+EMPLOYER_COUNTRY            Employer country
+EMPLOYER_PROVINCE           Employer province
+EMPLOYER_PHONE              Employer phone number
+EMPLOYER_PHONE_EXT          Employer phonenumber extension 
+TOTAL_WORKERS               total workers that employer has requested for
+H1B_DEPENDENT               significant portion of the workforce is made up of h1b workers
+WILLFUL_VIOLATOR            employer has violated lobor stipulations wilfully
+ETL_LOAD_DT                 System generated on Load
+ETL_UPDATE_DT               System generated on Load or Update
+
+
+OES_by_state_dim
+
+OES_STATE_DIM_ID            Primary Key generated                 
+PERIOD_YEAR_ID              Calenday Year       
+STATE_NAME                  State Name
+STATE_CODE                  State Code
+SOC_CODE                    occupational code from Standard Occupational Classification System  
+SOC_NAME                    occupational name from Standard Occupational Classification System
+total_EMP_CNT               Estimated total employment rounded to the nearest 10 (excludes self-employed).
+jobs_per_1000_in_AREA       The number of jobs (employment) in the given occupation per 1,000 jobs in the given area. Only available for the state and MSA estimates;otherewise this column is blank. 
+loc_quotient                The location quotient represents the ratio of an occupation’s share of employment in a given area to that occupation’s share of employment in the U.S. as a whole. For example, an occupation that makes up 10 percent of employment in a specific metropolitan area compared with 2 percent of U.S. employment would have a location quotient of 5 for the area in question. (Only on the state, metropolitan, and nonmetropolitan statistical area files.)
+hourly_wage_MEAN            Mean hourly wage    
+ANNUAL_WAGE_MEAN            Mean annual wage
+HOURLY_WAGE_PCT10           Hourly 10th percentile wage
+HOURLY_WAGE_pct25           Hourly 25th percentile wage
+HOURLY_WAGE_MEDIAN          Median hourly wage
+HOURLY_WAGE_pct75           Hourly 75th percentile wage
+HOURLY_WAGE_pct90           Hourly 90th percentile wage
+ANNUAL_WAGE_pct10           Annual 10th percentile wage
+ANNUAL_WAGE_pct25           Annual 25th percentile wage
+ANNUAL_WAGE_median          Median annual wage
+ANNUAL_WAGE_pct75           Annual 75th percentile wage
+ANNUAL_WAGE_pct90           Annual 90th percentile wage
+annual_ONLY                 Contains "TRUE" if only the annual wages are released.  The OES program only releases the annual wage for some occupations that typically work fewer than 2080 hours per year but are paid on an annual basis, such as teachers, pilots, and athletes.
+hourly_ONLY                 Contains "TRUE" if only the hourly wages are released. Some occupations, such as actors, dancers, and musicians and singers, are paid hourly and generally don't work a standard 2,080 hour work year.         
+ETL_LOAD_DT                 System generated on Load
+ETL_UPDATE_DT               System generated on Load or Update
