@@ -1,4 +1,4 @@
-# Data Engineering Capstone: Analyzing H1b Compensation Data and Comparing it with State Occupational Statitics data
+# Compensation Analytics: Analyzing H1b Compensation Data and Comparing it with State Occupational Statitics data
 
 ## Project Scope and Data Sources
 
